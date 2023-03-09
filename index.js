@@ -6,6 +6,9 @@ const read = readline.createInterface({
 })
 
 export default async function input(prompt){
+    if (typeof prompt !== 'string'){
+        throw new TypeError(`Expected string got ${typeof prompt}`)
+    }
     if (prompt === undefined){
         prompt = ""
     }
